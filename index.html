@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Catálogo Print.Balls: encuentra tu diseño favorito entre los 151 de Kanto.">
+  <meta name="theme-color" content="#111111">
+  <title>Print.Balls | Colección Kanto</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Print.Balls, inicio">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span class="brand-name">Print<span>.</span>Balls</span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#como-comprar">Cómo comprar</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <button class="cart-button" id="openCart" type="button" aria-controls="cartDrawer" aria-expanded="false">
+      <span>Carrito</span>
+      <strong id="cartCount">0</strong>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">Colección Kanto · 151 diseños</p>
+        <h1>Encuentra<br>tu favorita.</h1>
+        <p class="hero-text">Piezas coleccionables fabricadas una a una en Concepción. Elige tu personaje, presentación y color.</p>
+        <form class="hero-search" id="heroSearchForm" role="search">
+          <label class="sr-only" for="heroSearch">Buscar por nombre o número</label>
+          <input id="heroSearch" type="search" placeholder="Ej: Paras o #046" autocomplete="off">
+          <button type="submit">Buscar</button>
+        </form>
+        <div class="hero-facts" aria-label="Información principal">
+          <span><b>$9.990</b> cada diseño</span>
+          <span><b>Armada o kit</b> tú eliges</span>
+        </div>
+      </div>
+      <div class="hero-product" aria-label="Producto destacado Paras">
+        <div class="hero-number">#046</div>
+        <img src="assets/products/paras.jpg" alt="Pieza coleccionable inspirada en Paras" width="1200" height="900">
+        <div class="hero-card">
+          <div><span>Destacado</span><strong>Paras</strong></div>
+          <button type="button" data-product-id="46">Ver pieza</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Características del servicio">
+      <p><span>01</span> 151 diseños para elegir</p>
+      <p><span>02</span> Color personalizable sin costo</p>
+      <p><span>03</span> Fabricadas en Concepción</p>
+    </section>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Catálogo completo</p>
+          <h2>Elige por nombre<br>o número Pokédex</h2>
+        </div>
+        <p>Todos los diseños tienen el mismo precio. Las medidas finales cambian según sus alas, orejas, cola y otros detalles.</p>
+      </div>
+
+      <div class="catalog-tools">
+        <label class="catalog-search">
+          <span class="sr-only">Buscar en el catálogo</span>
+          <input id="catalogSearch" type="search" placeholder="Buscar diseño..." autocomplete="off">
+        </label>
+        <div class="filters" id="filters" aria-label="Filtrar colección">
+          <button class="active" type="button" data-filter="todos">Todos</button>
+          <button type="button" data-filter="iniciales">Iniciales</button>
+          <button type="button" data-filter="eeveelutions">Eeveelutions</button>
+          <button type="button" data-filter="legendarios">Legendarios</button>
+          <button type="button" data-filter="con-foto">Con foto real</button>
+        </div>
+      </div>
+
+      <div class="catalog-status" aria-live="polite">
+        <p id="resultCount">151 diseños</p>
+        <label>Ordenar
+          <select id="sortProducts">
+            <option value="number-asc">Número: menor a mayor</option>
+            <option value="number-desc">Número: mayor a menor</option>
+            <option value="name-asc">Nombre: A–Z</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+      <div class="catalog-empty" id="catalogEmpty" hidden>
+        <strong>No encontramos ese diseño.</strong>
+        <p>Prueba con otro nombre o con su número Pokédex.</p>
+      </div>
+      <button class="load-more" id="loadMore" type="button">Mostrar más diseños</button>
+    </section>
+
+    <section class="collections" aria-labelledby="collectionTitle">
+      <div class="section-heading light">
+        <div>
+          <p class="eyebrow">Para empezar tu colección</p>
+          <h2 id="collectionTitle">Juntos se ven<br>todavía mejor.</h2>
+        </div>
+        <p>Combina libremente tus favoritos. Las condiciones especiales para packs de 2 y 3 se publicarán cuando estén confirmadas.</p>
+      </div>
+      <div class="collection-grid">
+        <article class="collection-card starters">
+          <span>Selección 01</span>
+          <h3>Iniciales de Kanto</h3>
+          <p>Bulbasaur, Charmander, Squirtle y sus evoluciones.</p>
+          <button type="button" data-collection="iniciales">Ver colección</button>
+        </article>
+        <article class="collection-card birds">
+          <span>Selección 02</span>
+          <h3>Aves legendarias</h3>
+          <p>Articuno, Zapdos y Moltres en una misma selección.</p>
+          <button type="button" data-collection="legendarios">Ver colección</button>
+        </article>
+        <article class="collection-card eevee">
+          <span>Selección 03</span>
+          <h3>Eeveelutions</h3>
+          <p>Eevee, Vaporeon, Jolteon y Flareon.</p>
+          <button type="button" data-collection="eeveelutions">Ver colección</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="steps" id="como-comprar">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Cómo comprar</p>
+          <h2>De tu pantalla<br>a tu colección.</h2>
+        </div>
+      </div>
+      <ol class="step-grid">
+        <li><span>1</span><h3>Elige</h3><p>Busca por nombre o número y abre la ficha del diseño.</p></li>
+        <li><span>2</span><h3>Personaliza</h3><p>Selecciona armada o kit y conserva el color original o cámbialo.</p></li>
+        <li><span>3</span><h3>Confirma</h3><p>Revisa tu carrito y envía el pedido por WhatsApp.</p></li>
+        <li><span>4</span><h3>Recibe</h3><p>Coordinamos el pago y el despacho desde Concepción.</p></li>
+      </ol>
+    </section>
+
+    <section class="gift-section">
+      <div class="gift-visual">
+        <div class="gift-box"><span class="gift-sticker">PB</span></div>
+      </div>
+      <div class="gift-copy">
+        <p class="eyebrow">También puede ser un regalo</p>
+        <h2>Una presentación simple, negra y con identidad.</h2>
+        <p>Podrás agregar una tarjeta con mensaje sin costo. La caja personalizada está en evaluación para no aumentar innecesariamente el precio final.</p>
+        <a href="#catalogo">Elegir un diseño</a>
+      </div>
+    </section>
+
+    <section class="faq" id="preguntas">
+      <div class="section-heading">
+        <div><p class="eyebrow">Información clara</p><h2>Preguntas frecuentes</h2></div>
+      </div>
+      <div class="faq-list">
+        <details><summary>¿Cuánto cuesta cada diseño?</summary><p>Todos los diseños cuestan $9.990. Las ofertas o valores de packs se comunicarán por separado cuando estén confirmados.</p></details>
+        <details><summary>¿Qué tamaño tienen?</summary><p>Depende del diseño. Los modelos compactos pueden medir cerca de 7 × 7 cm y los que incluyen alas, orejas o colas pueden llegar aproximadamente a 15 × 10 cm.</p></details>
+        <details><summary>¿Puedo pedirla armada o para ensamblar?</summary><p>Sí. Puedes recibirla terminada o como kit. Los kits incluirán instrucciones de armado.</p></details>
+        <details><summary>¿Se puede cambiar el color?</summary><p>Sí. Puedes solicitar una combinación diferente sin costo adicional. No realizamos diseños completamente nuevos fuera del catálogo.</p></details>
+        <details><summary>¿Es un juguete?</summary><p>No. Es una pieza coleccionable de exposición con elementos delicados. Debe manipularse desde la base y mantenerse lejos del sol o calor intenso.</p></details>
+        <details><summary>¿Qué pasa si llega dañada?</summary><p>Escríbenos dentro de las primeras 24 horas y envía fotografías del producto y del embalaje. Evaluaremos el caso y coordinaremos la solución correspondiente, sin limitar tus derechos legales.</p></details>
+      </div>
+    </section>
+
+    <section class="contact-banner">
+      <p>¿No sabes cuál elegir?</p>
+      <h2>Cuéntanos tu personaje favorito.</h2>
+      <button id="contactWhatsapp" type="button">Hablar por WhatsApp</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="brand footer-brand"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-name">Print<span>.</span>Balls</span></div>
+    <p>Piezas coleccionables fabricadas en Concepción, Chile.</p>
+    <div class="footer-links"><a href="#catalogo">Catálogo</a><a href="#preguntas">Preguntas</a><a href="https://instagram.com/print.balls" target="_blank" rel="noreferrer">@print.balls</a></div>
+    <small>Print.Balls es una marca independiente y no está afiliada, patrocinada ni respaldada por Nintendo, The Pokémon Company o sus asociados. Los nombres y personajes pertenecen a sus respectivos titulares.</small>
+  </footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="drawer-header">
+      <div><p>Tu selección</p><h2 id="cartTitle">Carrito</h2></div>
+      <button id="closeCart" type="button" aria-label="Cerrar carrito">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><strong>Tu carrito está vacío.</strong><p>Agrega tus favoritas para comenzar.</p></div>
+    <div class="cart-footer" id="cartFooter" hidden>
+      <div class="cart-total"><span>Total productos</span><strong id="cartTotal">$0</strong></div>
+      <p>El despacho se cotiza al confirmar el pedido.</p>
+      <button id="checkoutWhatsapp" type="button">Continuar por WhatsApp</button>
+    </div>
+  </aside>
+
+  <dialog class="product-modal" id="productModal">
+    <button class="modal-close" id="closeModal" type="button" aria-label="Cerrar ficha">×</button>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
